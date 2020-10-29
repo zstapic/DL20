@@ -28,4 +28,6 @@ public abstract class MyDatabase extends RoomDatabase {
         }
         return INSTANCE;
     }
+
+    public abstract DAO getDAO();
 }

@@ -15,14 +15,14 @@ import hr.foi.air.database.entities.Store;
 @Dao
 public interface DAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public void insertStores(Store... stores);
+    public long[] insertStores(Store... stores);
     @Update public void updateStores(Store... stores);
     @Delete public void deleteStores(Store... stores);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public void insertDiscount(Discount... discounts);
-    @Update public void updateDiscount(Discount... discounts);
-    @Delete public void deleteDiscount(Discount... discounts);
+    public void insertDiscounts(Discount... discounts);
+    @Update public void updateDiscounts(Discount... discounts);
+    @Delete public void deleteDiscounts(Discount... discounts);
 
     @Query("SELECT * FROM stores")
     public List<Store> loadAllStores();
