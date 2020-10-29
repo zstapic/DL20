@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DiscountLocator</string>
+    <string name="message_hello">Discount Locator</string>
 </resources>

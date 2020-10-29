@@ -19,5 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
+
+        txtHello.setText(R.string.message_hello);
     }
 }
