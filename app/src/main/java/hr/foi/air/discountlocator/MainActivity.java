@@ -13,8 +13,6 @@ import static hr.foi.air.database.MyDatabase.getInstance;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.txt_hello)
-    TextView txtHello;
 
     public static MyDatabase database;
 
@@ -27,6 +25,5 @@ public class MainActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        txtHello.setText(R.string.message_hello);
     }
 }
