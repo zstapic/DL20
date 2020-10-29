@@ -4,10 +4,14 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
 
 import java.util.Date;
 
+import hr.foi.air.database.converters.DateConverter;
+
 @Entity(tableName = "discounts")
+@TypeConverters(DateConverter.class)
 public class Discount {
     @PrimaryKey(autoGenerate = true)
     int id;
