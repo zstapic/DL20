@@ -1,7 +1,14 @@
 package hr.foi.air.database.entities;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "stores")
 public class Store {
+    @PrimaryKey(autoGenerate = true)
     int id;
+    //@ColumnInfo(name = "some_name")
     String name;
     String description;
     String imgUrl;

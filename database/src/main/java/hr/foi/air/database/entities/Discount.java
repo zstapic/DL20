@@ -1,9 +1,18 @@
 package hr.foi.air.database.entities;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
+
 import java.util.Date;
 
+@Entity(tableName = "discounts")
 public class Discount {
+    @PrimaryKey(autoGenerate = true)
     int id;
+    @ForeignKey(entity = Store.class, parentColumns = "id", childColumns = "storeId")
+    @ColumnInfo(index = true)
     int storeId;
     String name;
     String description;
