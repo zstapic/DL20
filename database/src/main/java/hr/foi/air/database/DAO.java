@@ -32,4 +32,7 @@ public interface DAO {
 
     @Query("SELECT * FROM stores WHERE name LIKE :name")
     public List<Store> loadAllStoreByName(String name);
+
+    @Query("SELECT name FROM discounts")
+    public List<String> getDiscounts();
 }
