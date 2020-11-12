@@ -6,6 +6,7 @@ import com.squareup.okhttp.OkHttpClient;
 
 import java.lang.reflect.Type;
 import java.util.Arrays;
+import java.util.Date;
 
 import hr.foi.air.database.entities.Discount;
 import hr.foi.air.database.entities.Store;
@@ -72,16 +73,19 @@ public class MyWebserviceCaller {
                             } else
                             {
                                 System.out.println("Unrecognized class");
+                                processFailureResponse("Unrecognized class");
                             }
                         }
 
                     } catch (Exception ex) {
                         ex.printStackTrace();
+                        processFailureResponse(ex.getMessage());
                     }
                 }
                 @Override
                 public void onFailure(Throwable t) {
                     t.printStackTrace();
+                    processFailureResponse(t.getMessage());
                 }
             });
         }
@@ -115,5 +119,14 @@ public class MyWebserviceCaller {
                 Arrays.asList(discountItems),
                 true,
                 response.body().getTimeStamp());
+    }
+
+    private void processFailureResponse(String message) {
+        //TODO - Refactor to send message to handler
+
+        myWebserviceHandler.onDataArrived(
+                null,
+                false,
+                new Date().getTime());
     }
 }
