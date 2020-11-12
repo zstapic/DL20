@@ -1,3 +1,5 @@
+include ':core'
+include ':webservice'
 include ':database'
 include ':app'
 rootProject.name = "DiscountLocator"

@@ -39,6 +39,8 @@ dependencies {
 
     //module dependancies
     implementation project (':database')
+    implementation project (':webservice')
+    implementation project (':core')
 
     //ButterKnife
     implementation 'com.jakewharton:butterknife:10.2.3'
