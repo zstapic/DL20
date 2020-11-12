@@ -1,6 +1,7 @@
 package hr.foi.air.webservice;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.squareup.okhttp.OkHttpClient;
 
 import java.lang.reflect.Type;
@@ -67,6 +68,7 @@ public class MyWebserviceCaller {
                                 processStoresResponse(response);
                             } else if(entityType == Discount.class){
                                 System.out.println("Got discounts...");
+                                processDiscountsResponse(response);
                             } else
                             {
                                 System.out.println("Unrecognized class");
@@ -94,6 +96,23 @@ public class MyWebserviceCaller {
 
         myWebserviceHandler.onDataArrived(
                 Arrays.asList(storeItems),
+                true,
+                response.body().getTimeStamp());
+    }
+
+
+    private void processDiscountsResponse(Response<MyWebserviceResponse> response) {
+        Gson gson = new GsonBuilder()
+                .setDateFormat("yyyy-MM-dd")
+                .create();
+
+        Discount[] discountItems = gson.fromJson(
+                response.body().getItems(),
+                Discount[].class
+        );
+
+        myWebserviceHandler.onDataArrived(
+                Arrays.asList(discountItems),
                 true,
                 response.body().getTimeStamp());
     }
