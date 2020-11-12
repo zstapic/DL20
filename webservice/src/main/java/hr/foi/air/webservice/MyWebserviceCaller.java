@@ -1,8 +1,10 @@
 package hr.foi.air.webservice;
 
+import com.google.gson.Gson;
 import com.squareup.okhttp.OkHttpClient;
 
 import java.lang.reflect.Type;
+import java.util.Arrays;
 
 import hr.foi.air.database.entities.Discount;
 import hr.foi.air.database.entities.Store;
@@ -62,6 +64,7 @@ public class MyWebserviceCaller {
                         if(response.isSuccess()){
                             if(entityType == Store.class){
                                 System.out.println("Got stores...");
+                                processStoresResponse(response);
                             } else if(entityType == Discount.class){
                                 System.out.println("Got discounts...");
                             } else
@@ -80,5 +83,18 @@ public class MyWebserviceCaller {
                 }
             });
         }
+    }
+
+    private void processStoresResponse(Response<MyWebserviceResponse> response) {
+        Gson gson = new Gson();
+        Store[] storeItems = gson.fromJson(
+                response.body().getItems(),
+                Store[].class
+        );
+
+        myWebserviceHandler.onDataArrived(
+                Arrays.asList(storeItems),
+                true,
+                response.body().getTimeStamp());
     }
 }
