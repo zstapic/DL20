@@ -6,6 +6,7 @@ import java.lang.reflect.Type;
 
 import hr.foi.air.database.entities.Discount;
 import hr.foi.air.database.entities.Store;
+import hr.foi.air.webservice.handlers.MyWebserviceHandler;
 import hr.foi.air.webservice.responses.MyWebserviceResponse;
 import retrofit.Call;
 import retrofit.Callback;
@@ -18,9 +19,13 @@ public class MyWebserviceCaller {
     Retrofit retrofit;
     // base URL of the web service
     private final String baseUrl = "http://cortex.foi.hr/mtl/courses/air/";
+    private MyWebserviceHandler myWebserviceHandler;
 
     // constructor
-    public MyWebserviceCaller(){
+    public MyWebserviceCaller(MyWebserviceHandler myWebserviceHandler){
+
+        //caller received reference to response handler to enable callback when data is ready
+        this.myWebserviceHandler = myWebserviceHandler;
 
         OkHttpClient client = new OkHttpClient();
 
