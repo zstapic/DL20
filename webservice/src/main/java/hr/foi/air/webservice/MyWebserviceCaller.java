@@ -4,6 +4,8 @@ import com.squareup.okhttp.OkHttpClient;
 
 import java.lang.reflect.Type;
 
+import hr.foi.air.database.entities.Discount;
+import hr.foi.air.database.entities.Store;
 import hr.foi.air.webservice.responses.MyWebserviceResponse;
 import retrofit.Call;
 import retrofit.Callback;
@@ -39,7 +41,13 @@ public class MyWebserviceCaller {
         //TODO: fix get all to work with stores and discounts
 
         MyWebservice serviceAPI = retrofit.create(MyWebservice.class);
-        Call<MyWebserviceResponse> call = serviceAPI.getStores(method);
+        Call<MyWebserviceResponse> call;
+        if(entityType == Store.class){
+            call = serviceAPI.getStores(method);
+        }
+        else {
+            call = serviceAPI.getDiscounts(method);
+        }
 
         if(call != null){
             call.enqueue(new Callback<MyWebserviceResponse>() {
@@ -47,7 +55,14 @@ public class MyWebserviceCaller {
                 public void onResponse(Response<MyWebserviceResponse> response, Retrofit retrofit) {
                     try {
                         if(response.isSuccess()){
-                            System.out.println("Got stores...");
+                            if(entityType == Store.class){
+                                System.out.println("Got stores...");
+                            } else if(entityType == Discount.class){
+                                System.out.println("Got discounts...");
+                            } else
+                            {
+                                System.out.println("Unrecognized class");
+                            }
                         }
 
                     } catch (Exception ex) {
