@@ -15,6 +15,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import hr.foi.air.core.DataLoadedListener;
 import hr.foi.air.database.MyDatabase;
 import hr.foi.air.database.data.MockData;
 import hr.foi.air.database.entities.Discount;
@@ -22,7 +23,7 @@ import hr.foi.air.database.entities.Store;
 
 import static hr.foi.air.database.MyDatabase.getInstance;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements DataLoadedListener {
 
     @BindView(R.id.discount_list)
     ListView mListView;
@@ -65,5 +66,10 @@ public class MainActivity extends AppCompatActivity {
         }else {
             MockData.writeAll(this);
         }
+    }
+
+    @Override
+    public void onDataLoaded(List<Store> stores, List<Discount> discounts) {
+
     }
 }
