@@ -23,6 +23,7 @@ import hr.foi.air.database.data.MockData;
 import hr.foi.air.database.entities.Discount;
 import hr.foi.air.database.entities.Store;
 import hr.foi.air.discountlocator.loaders.DbDataLoader;
+import hr.foi.air.discountlocator.loaders.WsDataLoader;
 
 import static hr.foi.air.database.MyDatabase.getInstance;
 
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements DataLoadedListene
     @OnClick(R.id.test_button)
     public void buttonClicked(View view)
     {
-        DataLoader dataLoader = new DbDataLoader(this);
+        DataLoader dataLoader = new WsDataLoader();
         dataLoader.loadData(this);
     }
 
