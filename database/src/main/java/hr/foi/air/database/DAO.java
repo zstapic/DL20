@@ -27,6 +27,9 @@ public interface DAO {
     @Query("SELECT * FROM stores")
     public List<Store> loadAllStores();
 
+    @Query("SELECT * FROM discounts")
+    public List<Discount> loadAllDiscounts();
+
     @Query("SELECT * FROM discounts WHERE storeId = :storeId")
     public List<Discount> loadAllDiscountsByStore(int storeId);
 
