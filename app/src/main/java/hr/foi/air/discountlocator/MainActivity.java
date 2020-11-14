@@ -10,16 +10,19 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import hr.foi.air.core.DataLoadedListener;
+import hr.foi.air.core.DataLoader;
 import hr.foi.air.database.MyDatabase;
 import hr.foi.air.database.data.MockData;
 import hr.foi.air.database.entities.Discount;
 import hr.foi.air.database.entities.Store;
+import hr.foi.air.discountlocator.loaders.DbDataLoader;
 
 import static hr.foi.air.database.MyDatabase.getInstance;
 
@@ -44,9 +47,8 @@ public class MainActivity extends AppCompatActivity implements DataLoadedListene
     @OnClick(R.id.test_button)
     public void buttonClicked(View view)
     {
-        final List<String> listItems = database.getDAO().getDiscounts();
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listItems);
-        mListView.setAdapter(adapter);
+        DataLoader dataLoader = new DbDataLoader(this);
+        dataLoader.loadData(this);
     }
 
 
@@ -69,7 +71,18 @@ public class MainActivity extends AppCompatActivity implements DataLoadedListene
     }
 
     @Override
+    @SuppressWarnings({"unchecked", "rawtypes"})
     public void onDataLoaded(List<Store> stores, List<Discount> discounts) {
+        final List<String> listItems = new ArrayList<>();
+        for (Discount d: discounts) {
+            listItems.add(d.getName());
+        }
 
+        ArrayAdapter adapter =
+                new ArrayAdapter(
+                        this,
+                        android.R.layout.simple_list_item_1,
+                        listItems.toArray());
+        mListView.setAdapter(adapter);
     }
 }
