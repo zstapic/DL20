@@ -1,6 +1,7 @@
 package hr.foi.air.discountlocator;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
@@ -22,8 +23,8 @@ import hr.foi.air.discountlocator.loaders.WsDataLoader;
 
 public class MainActivity extends AppCompatActivity implements DataLoadedListener {
 
-    @BindView(R.id.discount_list)
-    ListView mListView;
+    @BindView(R.id.main_recycler)
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,28 +32,17 @@ public class MainActivity extends AppCompatActivity implements DataLoadedListene
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
+        loadData();
     }
 
-    @OnClick(R.id.test_button)
-    public void buttonClicked(View view)
+    public void loadData()
     {
         DataLoader dataLoader = new WsDataLoader();
         dataLoader.loadData(this);
     }
 
     @Override
-    @SuppressWarnings({"unchecked", "rawtypes"})
     public void onDataLoaded(List<Store> stores, List<Discount> discounts) {
-        final List<String> listItems = new ArrayList<>();
-        for (Discount d: discounts) {
-            listItems.add(d.getName());
-        }
 
-        ArrayAdapter adapter =
-                new ArrayAdapter(
-                        this,
-                        android.R.layout.simple_list_item_1,
-                        listItems.toArray());
-        mListView.setAdapter(adapter);
     }
 }
