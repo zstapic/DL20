@@ -4,4 +4,6 @@
     <string name="store_image">Store image</string>
     <string name="store_name">Store name</string>
     <string name="store_desc">Store description or promotional text that could be multiline and its height will automatically enlarge with amount of text.</string>
+    <string name="discount_name">Discount name</string>
+    <string name="discount_desc">Discount description could be multiline text. The objects height will automatically enlarge if text amount is increased.</string>
 </resources>
