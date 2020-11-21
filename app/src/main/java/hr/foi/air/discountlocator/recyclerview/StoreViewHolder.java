@@ -37,7 +37,7 @@ public class StoreViewHolder extends ParentViewHolder {
     {
         storeName.setText(store.getName());
         storeDesc.setText(store.getDescription());
-        Picasso.get()
+        Picasso.with(storeImage.getContext())
                 .load(store.getImgUrl())
                 .into(storeImage);
     }
