@@ -1,6 +1,7 @@
 package hr.foi.air.discountlocator;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -20,6 +21,8 @@ import hr.foi.air.database.entities.Discount;
 import hr.foi.air.database.entities.Store;
 import hr.foi.air.discountlocator.loaders.DbDataLoader;
 import hr.foi.air.discountlocator.loaders.WsDataLoader;
+import hr.foi.air.discountlocator.recyclerview.ExpandableStoreItem;
+import hr.foi.air.discountlocator.recyclerview.StoreRecyclerAdapter;
 
 public class MainActivity extends AppCompatActivity implements DataLoadedListener {
 
@@ -43,6 +46,11 @@ public class MainActivity extends AppCompatActivity implements DataLoadedListene
 
     @Override
     public void onDataLoaded(List<Store> stores, List<Discount> discounts) {
+        List<ExpandableStoreItem> storeItems = new ArrayList<>();
+        for(Store s : stores)
+            storeItems.add(new ExpandableStoreItem(s, discounts));
 
+        recyclerView.setAdapter(new StoreRecyclerAdapter(this, storeItems));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }
