@@ -15,6 +15,20 @@ public class Store {
     long longitude;
     long latitude;
 
+    //default constructor for room
+    public Store(){ }
+
+    //specific constructor for object copy option
+    public Store (Store s)
+    {
+        this.id = s.id;
+        this.name = s.name;
+        this.description = s.description;
+        this.imgUrl = s.imgUrl;
+        this.longitude = s.longitude;
+        this.latitude = s.latitude;
+    }
+
     public int getId() {
         return id;
     }
