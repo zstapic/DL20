@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">DiscountLocator</string>
     <string name="test_button">Test button</string>
+    <string name="store_image">Store image</string>
+    <string name="store_name">Store name</string>
+    <string name="store_desc">Store description or promotional text that could be multiline and its height will automatically enlarge with amount of text.</string>
 </resources>
