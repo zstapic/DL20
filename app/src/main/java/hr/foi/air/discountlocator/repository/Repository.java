@@ -37,23 +37,28 @@ public class Repository implements DataLoadedListener {
 
     @Override
     public void onDataLoaded(List<Store> stores, List<Discount> discounts) {
+        SendDataToListener(stores, discounts);
+
+        if (dataLoader.getClass() == WsDataLoader.class)
+            CacheDataToDatabase(stores, discounts);
+    }
+
+    private void SendDataToListener(List<Store> stores, List<Discount> discounts) {
         List<ExpandableStoreItem> storeItems = new ArrayList<>();
         for(Store s : stores)
             storeItems.add(new ExpandableStoreItem(s, discounts));
 
         repositoryListener.onDataReady(storeItems);
-
-        if (dataLoader.getClass() == WsDataLoader.class)
-        {
-            DAO dao = MyDatabase.getInstance(context).getDAO();
-            dao.deleteStores();
-            dao.deleteDiscounts();
-
-            for(Store s: stores)
-                dao.insertStores(s);
-            for(Discount d: discounts)
-                dao.insertDiscounts(d);
-        }
     }
 
+    private void CacheDataToDatabase(List<Store> stores, List<Discount> discounts) {
+        DAO dao = MyDatabase.getInstance(context).getDAO();
+        dao.deleteStores();
+        dao.deleteDiscounts();
+
+        for(Store s: stores)
+            dao.insertStores(s);
+        for(Discount d: discounts)
+            dao.insertDiscounts(d);
+    }
 }
