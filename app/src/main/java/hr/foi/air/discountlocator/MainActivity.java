@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayMainFragment()
     {
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.fragment_container, new DiscountListFragment());
-        ft.commit();
+        //FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        //ft.replace(R.id.fragment_container, new DiscountListFragment());
+        //ft.commit();
     }
 }
