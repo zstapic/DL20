@@ -9,5 +9,10 @@
             android:icon="@android:drawable/ic_menu_agenda"
             android:title="@string/nav_discount_list" />
 
+        <item
+            android:id="@+id/nav_disocunt_map"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="@string/nav_discount_map" />
+
     </group>
 </menu>
