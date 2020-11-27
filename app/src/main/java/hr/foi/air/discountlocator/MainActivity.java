@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements RepositoryListene
     public void getData()
     {
         Repository r = new Repository();
-        r.getData(this);
+        r.getData(this, this);
     }
 
     @Override
