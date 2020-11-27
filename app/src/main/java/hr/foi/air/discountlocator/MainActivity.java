@@ -5,26 +5,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
-import hr.foi.air.core.DataLoadedListener;
-import hr.foi.air.core.DataLoader;
-import hr.foi.air.database.entities.Discount;
-import hr.foi.air.database.entities.Store;
-import hr.foi.air.discountlocator.loaders.DbDataLoader;
-import hr.foi.air.discountlocator.loaders.WsDataLoader;
 import hr.foi.air.discountlocator.recyclerview.ExpandableStoreItem;
 import hr.foi.air.discountlocator.recyclerview.StoreRecyclerAdapter;
+import hr.foi.air.discountlocator.repository.Repository;
+import hr.foi.air.discountlocator.repository.RepositoryListener;
 
-public class MainActivity extends AppCompatActivity implements DataLoadedListener {
+public class MainActivity extends AppCompatActivity implements RepositoryListener {
 
     @BindView(R.id.main_recycler)
     RecyclerView recyclerView;
@@ -35,21 +26,17 @@ public class MainActivity extends AppCompatActivity implements DataLoadedListene
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
-        loadData();
+        getData();
     }
 
-    public void loadData()
+    public void getData()
     {
-        DataLoader dataLoader = new WsDataLoader();
-        dataLoader.loadData(this);
+        Repository r = new Repository();
+        r.getData(this);
     }
 
     @Override
-    public void onDataLoaded(List<Store> stores, List<Discount> discounts) {
-        List<ExpandableStoreItem> storeItems = new ArrayList<>();
-        for(Store s : stores)
-            storeItems.add(new ExpandableStoreItem(s, discounts));
-
+    public void onDataReady(List<ExpandableStoreItem> storeItems) {
         recyclerView.setAdapter(new StoreRecyclerAdapter(this, storeItems));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
