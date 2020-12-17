@@ -1,4 +1,4 @@
-package hr.foi.air.discountlocator.recyclerview;
+package hr.foi.air.discountlocator_g2.recyclerview;
 
 import com.bignerdranch.expandablerecyclerview.model.Parent;
 

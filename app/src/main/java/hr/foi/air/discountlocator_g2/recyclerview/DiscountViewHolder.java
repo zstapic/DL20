@@ -1,4 +1,4 @@
-package hr.foi.air.discountlocator.recyclerview;
+package hr.foi.air.discountlocator_g2.recyclerview;
 
 import android.view.View;
 import android.widget.TextView;
@@ -10,7 +10,7 @@ import com.bignerdranch.expandablerecyclerview.ChildViewHolder;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import hr.foi.air.database.entities.Discount;
-import hr.foi.air.discountlocator.R;
+import hr.foi.air.discountlocator_g2.R;
 
 public class DiscountViewHolder extends ChildViewHolder<Discount> {
 

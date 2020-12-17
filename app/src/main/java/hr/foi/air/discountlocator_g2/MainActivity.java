@@ -1,9 +1,8 @@
-package hr.foi.air.discountlocator;
+package hr.foi.air.discountlocator_g2;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -12,8 +11,6 @@ import androidx.navigation.ui.NavigationUI;
 import android.os.Bundle;
 
 import com.google.android.material.navigation.NavigationView;
-
-import hr.foi.air.discountlocator.fragments.DiscountListFragment;
 
 public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;

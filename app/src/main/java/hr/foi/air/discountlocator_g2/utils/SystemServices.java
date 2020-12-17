@@ -1,4 +1,4 @@
-package hr.foi.air.discountlocator.utils;
+package hr.foi.air.discountlocator_g2.utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

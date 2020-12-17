@@ -1,4 +1,4 @@
-package hr.foi.air.discountlocator.loaders;
+package hr.foi.air.discountlocator_g2.loaders;
 
 import java.util.List;
 

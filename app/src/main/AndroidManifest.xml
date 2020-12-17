@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="hr.foi.air.discountlocator">
+    package="hr.foi.air.discountlocator_g2">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DiscountLocator">
-        <activity android:name=".MainActivity"
+        <activity android:name="hr.foi.air.discountlocator_g2.MainActivity"
             android:theme="@style/Theme.DiscountLocator.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

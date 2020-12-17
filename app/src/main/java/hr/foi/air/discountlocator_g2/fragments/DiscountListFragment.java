@@ -1,4 +1,4 @@
-package hr.foi.air.discountlocator.fragments;
+package hr.foi.air.discountlocator_g2.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,11 +15,11 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import hr.foi.air.discountlocator.R;
-import hr.foi.air.discountlocator.recyclerview.ExpandableStoreItem;
-import hr.foi.air.discountlocator.recyclerview.StoreRecyclerAdapter;
-import hr.foi.air.discountlocator.repository.Repository;
-import hr.foi.air.discountlocator.repository.RepositoryListener;
+import hr.foi.air.discountlocator_g2.R;
+import hr.foi.air.discountlocator_g2.recyclerview.ExpandableStoreItem;
+import hr.foi.air.discountlocator_g2.recyclerview.StoreRecyclerAdapter;
+import hr.foi.air.discountlocator_g2.repository.Repository;
+import hr.foi.air.discountlocator_g2.repository.RepositoryListener;
 
 public class DiscountListFragment extends Fragment implements RepositoryListener {
     @BindView(R.id.main_recycler)

@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "hr.foi.air.discountlocator"
+        applicationId "hr.foi.air.discountlocator_g2"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1

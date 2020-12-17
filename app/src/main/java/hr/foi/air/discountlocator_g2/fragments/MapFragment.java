@@ -1,4 +1,4 @@
-package hr.foi.air.discountlocator.fragments;
+package hr.foi.air.discountlocator_g2.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import hr.foi.air.discountlocator.R;
+import hr.foi.air.discountlocator_g2.R;
 
 public class MapFragment extends Fragment {
     @Nullable

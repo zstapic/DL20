@@ -1,4 +1,4 @@
-package hr.foi.air.discountlocator.recyclerview;
+package hr.foi.air.discountlocator_g2.recyclerview;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,7 +12,7 @@ import com.bignerdranch.expandablerecyclerview.ExpandableRecyclerAdapter;
 import java.util.List;
 
 import hr.foi.air.database.entities.Discount;
-import hr.foi.air.discountlocator.R;
+import hr.foi.air.discountlocator_g2.R;
 
 public class StoreRecyclerAdapter extends ExpandableRecyclerAdapter
         <ExpandableStoreItem, Discount, StoreViewHolder, DiscountViewHolder>

@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/nav_disocunt_list"
-        android:name="hr.foi.air.discountlocator.fragments.DiscountListFragment"
+        android:name="hr.foi.air.discountlocator_g2.fragments.DiscountListFragment"
         android:label="@string/nav_discount_list"
         tools:layout="@layout/fragment_discount_list" />
 
     <fragment
         android:id="@+id/nav_disocunt_map"
-        android:name="hr.foi.air.discountlocator.fragments.MapFragment"
+        android:name="hr.foi.air.discountlocator_g2.fragments.MapFragment"
         android:label="@string/nav_discount_map"
         tools:layout="@layout/fragment_map" />
 

@@ -1,8 +1,6 @@
-package hr.foi.air.discountlocator.repository;
+package hr.foi.air.discountlocator_g2.repository;
 
 import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +11,10 @@ import hr.foi.air.database.DAO;
 import hr.foi.air.database.MyDatabase;
 import hr.foi.air.database.entities.Discount;
 import hr.foi.air.database.entities.Store;
-import hr.foi.air.discountlocator.loaders.DbDataLoader;
-import hr.foi.air.discountlocator.loaders.WsDataLoader;
-import hr.foi.air.discountlocator.recyclerview.ExpandableStoreItem;
-import hr.foi.air.discountlocator.utils.SystemServices;
+import hr.foi.air.discountlocator_g2.loaders.DbDataLoader;
+import hr.foi.air.discountlocator_g2.loaders.WsDataLoader;
+import hr.foi.air.discountlocator_g2.recyclerview.ExpandableStoreItem;
+import hr.foi.air.discountlocator_g2.utils.SystemServices;
 
 public class Repository implements DataLoadedListener {
     RepositoryListener repositoryListener;

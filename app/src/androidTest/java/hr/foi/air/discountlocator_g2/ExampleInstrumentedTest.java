@@ -1,4 +1,4 @@
-package hr.foi.air.discountlocator;
+package hr.foi.air.discountlocator_g2;
 
 import android.content.Context;
 

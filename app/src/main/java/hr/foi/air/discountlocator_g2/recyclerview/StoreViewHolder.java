@@ -1,4 +1,4 @@
-package hr.foi.air.discountlocator.recyclerview;
+package hr.foi.air.discountlocator_g2.recyclerview;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -12,7 +12,7 @@ import com.squareup.picasso.Picasso;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import hr.foi.air.database.entities.Store;
-import hr.foi.air.discountlocator.R;
+import hr.foi.air.discountlocator_g2.R;
 
 public class StoreViewHolder extends ParentViewHolder {
 
