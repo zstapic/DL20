@@ -11,6 +11,9 @@ import androidx.navigation.ui.NavigationUI;
 import android.os.Bundle;
 
 import com.google.android.material.navigation.NavigationView;
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
 
 public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
@@ -25,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         displayMainFragment();
+
+        AppCenter.start(getApplication(), "e88e8d3f-e0cf-4d7a-8b14-004ef18aaff9",
+                Analytics.class, Crashes.class);
     }
 
     private void displayMainFragment()
@@ -43,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        Analytics.trackEvent("Main fragment displayed");
     }
 
     @Override
