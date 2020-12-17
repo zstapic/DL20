@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "834512100261",
+    "project_id": "dl20-g2-297514",
+    "storage_bucket": "dl20-g2-297514.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:834512100261:android:c2b832eef0a1c475fee64c",
+        "android_client_info": {
+          "package_name": "hr.foi.air.discountlocator_g2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "834512100261-dv47dggopi4hbu49mtau1mr7r3annatk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZzWEl6VDrJGP_amQXjxxMhk3HLgnKFQM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "834512100261-dv47dggopi4hbu49mtau1mr7r3annatk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
